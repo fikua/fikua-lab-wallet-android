@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // Multipaz (OpenWallet Foundation) — ISO 18013-5 mdoc + SD-JWT VC + Keystore.
+        maven("https://central.sonatype.com/repository/maven-snapshots/")
+    }
+}
+
+rootProject.name = "fikua-lab-wallet-android"
+include(":app")
